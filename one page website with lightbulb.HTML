@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 48 Laws of Power (Hilariously Analyzed)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background-color: #1a202c;
+            color: #f7fafc;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #2d3748;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 0.25rem solid #4a5568;
+        }
+        header h1 {
+            font-size: 2.25rem;
+            margin-bottom: 0.75rem;
+            color: #f56565;
+        }
+        header p {
+            font-size: 1rem;
+            color: #cbd5e0;
+            margin-bottom: 0;
+        }
+        nav {
+            background-color: #4a5568;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 0.25rem solid #718096;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: #f7fafc;
+            text-decoration: none;
+            font-size: 1.25rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #f7fafc;
+            color: #1a202c;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 0.25rem solid #718096;
+        }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #f56565;
+            text-align: center;
+        }
+        section p {
+            font-size: 1rem;
+            color: #cbd5e0;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .law-analysis {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #2d3748;
+            border-radius: 0.375rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+        .law-analysis h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #f56565;
+            text-align: center;
+        }
+        .law-analysis p {
+            font-size: 1rem;
+            color: #cbd5e0;
+            margin-bottom: 1rem;
+        }
+        .law-analysis blockquote {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            padding: 1rem;
+            border-left: 0.25rem solid #f56565;
+            font-style: italic;
+            color: #a0aec0;
+            background-color: #4a5568;
+            border-radius: 0.375rem;
+        }
+        footer {
+            background-color: #2d3748;
+            padding: 2rem;
+            text-align: center;
+            color: #cbd5e0;
+            border-top: 0.25rem solid #4a5568;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 3rem;
+            }
+            .law-analysis blockquote {
+                margin-left: 4rem;
+                margin-right: 4rem;
+            }
+        }
+
+        /* Lightbox Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 0.375rem;
+            box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+        }
+        .modal .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
+        }
+        .modal .close-button:hover {
+            color: #f56565;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+       .gallery img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-800 text-gray-200">
+    <header class="bg-gray-700 py-6 text-center border-b border-gray-600">
+        <h1 class="text-3xl font-bold mb-4 text-red-500">The 48 Laws of Power (Hilariously Analyzed)</h1>
+        <p class="text-lg text-gray-300">Your guide to world domination (with a side of snark).</p>
+    </header>
+    <nav class="bg-gray-700 py-4 text-center border-b border-gray-600">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="#law1" class="hover:bg-gray-50 hover:text-gray-800">Law 1</a></li>
+            <li><a href="#law10" class="hover:bg-gray-50 hover:text-gray-800">Law 10</a></li>
+            <li><a href="#law20" class="hover:bg-gray-50 hover:text-gray-800">Law 20</a></li>
+            <li><a href="#law30" class="hover:bg-gray-50 hover:text-gray-800">Law 30</a></li>
+            <li><a href="#law40" class="hover:bg-gray-50 hover:text-gray-800">Law 40</a></li>
+            <li><a href="#law48" class="hover:bg-gray-50 hover:text-gray-800">Law 48</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="law1" class="py-8 border-b border-gray-600">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Law 1: Never Outshine the Master</h2>
+            <div class="law-analysis">
+                <h3>The Law</h3>
+                <blockquote>
+                    Always make those above you feel comfortably superior. In your desire to please or impress them, do not go too far in displaying your talents or you might accomplish the opposite – inspire fear and insecurity. Make your masters appear more brilliant than they are and you will attain the heights of power.
+                </blockquote>
+                <p>
+                    <strong>Our Hilarious Take:</strong> So, basically, act like your boss is a genius, even if they think pineapple on pizza is a culinary masterpiece.  Your brilliance? Keep it under wraps, my friend.  Unless you *want* to be replaced by a golden retriever that can fetch coffee.
+                </p>
+                <p>
+                    <strong>When to Use:</strong> When you're dealing with someone who has a fragile ego the size of a peanut.  Think: office parties, performance reviews, and family dinners with certain relatives.
+                </p>
+                <p>
+                    <strong>When to Avoid:</strong> Job interviews (unless you're applying to be a professional ego-stroker), brainstorming sessions (your ideas might actually be good), and when your "master" is a sentient AI.
+                </p>
+            </div>
+        </section>
+        <section id="law10" class="py-8 border-b border-gray-600">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Law 10: Infection: Avoid the Unhappy and Unlucky</h2>
+            <div class="law-analysis">
+                <h3>The Law</h3>
+                <blockquote>
+                    You can die from another man's misery — emotional states are as infectious as disease. You may think you are helping the drowning man but you are merely precipitating your own disaster. The unfortunate sometimes draw misfortune on themselves; they will also draw it on you. Associate with the happy and fortunate instead.
+                </blockquote>
+                <p>
+                    <strong>Our Hilarious Take:</strong>  Think of negative people as emotional vampires, but instead of sucking your blood, they suck your will to live.  Avoid them like they're trying to sell you expired coupons.  Hang out with sunshine and rainbows, or at least people who own a funny hat.
+                </p>
+                <p>
+                    <strong>When to Use:</strong> When you feel your optimism being slowly drained, like a leaky balloon. Also, when someone starts every sentence with, "Well, it could be worse..."
+                </p>
+                <p>
+                    <strong>When to Avoid:</strong> When you're a therapist (it's literally your job), when you're writing a tragedy, and when you're trying to convince your friend to watch a really depressing movie with you.
+                </p>
+            </div>
+        </section>
+        <section id="law20" class="py-8 border-b border-gray-600">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Law 20: Do Not Commit to Anyone</h2>
+            <div class="law-analysis">
+                <h3>The Law</h3>
+                <blockquote>
+                  It is the fool who always rushes to take sides. Do not commit to any side or cause but yourself. By maintaining your independence, you become the master of others — playing people against one another.
+                </blockquote>
+                <p>
+                    <strong>Our Hilarious Take:</strong> Play the field... of alliances, that is. Think of yourself as Switzerland, but with better snacks. The goal is to make everyone else fight over your precious, precious neutrality.
+                </p>
+                <p>
+                    <strong>When to Use:</strong> When you're in a workplace with warring factions, when you're negotiating a deal, or when you're trying to decide between two ice cream flavors and want both.
+                </p>
+                <p>
+                    <strong>When to Avoid:</strong> When you're asked to be the best man/maid of honor at a wedding, when you're on a sports team, or when you're trying to convince your cat that you love *it* the most.
+                </p>
+            </div>
+        </section>
+        <section id="law30" class="py-8 border-b border-gray-600">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Law 30: Make Your Accomplishments Seem Effortless</h2>
+            <div class="law-analysis">
+                <h3>The Law</h3>
+                <blockquote>
+                   Your actions must seem natural and executed with ease. All the toil and practice that go into them, and all the clever tricks, must be concealed. When you act, act effortlessly, as if you could do much more. Avoid the temptation of revealing how hard you work - it only raises questions.
+                </blockquote>
+                <p>
+                    <strong>Our Hilarious Take:</strong> Be a swan, my friend. Graceful on the surface, paddling like crazy underneath. Let them think you woke up this fabulous. Never let them see you sweat, unless it's in a sauna, and you're still being effortlessly fabulous.
+                </p>
+                <p>
+                    <strong>When to Use:</strong> Giving a presentation, performing a musical piece, or casually winning an Olympic gold medal.
+                </p>
+                <p>
+                    <strong>When to Avoid:</strong> Writing a "how-to" manual, teaching someone a new skill, or literally any situation where transparency is required (like, say, performing surgery).
+                </p>
+        </section>
+        <section id="law40" class="py-8 border-b border-gray-600">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Law 40: Despise the Free Lunch</h2>
+            <div class="law-analysis">
+                <h3>The Law</h3>
+                 <blockquote>
+                    What is offered for free is dangerous — it usually involves either a trick or a hidden obligation. Whatever has worth is paid for. By paying your own way you stay clear of gratitude and guilt. It is also often wise to pay in full — honesty and generosity bring no resentment.
+                 </blockquote>
+                <p>
+                    <strong>Our Hilarious Take:</strong> That "free lunch"? It's probably stapled to a contract written in ancient Sumerian.  Remember, nothing is *truly* free.  Even compliments come with the unspoken expectation that you'll return them, tenfold.
+                </p>
+                <p>
+                    <strong>When to Use:</strong> When someone offers you a "business opportunity" that sounds too good to be true, when a stranger offers you a ride, or when your friend says, "I'll pay you back later" (spoiler alert: they won't).
+                </p>
+                <p>
+                    <strong>When to Avoid:</strong> When someone offers you a glass of water in the desert, when a doctor offers you life-saving medical treatment, and when your grandma offers you a cookie.
+                </p>
+            </div>
+        </section>
+        <section id="law48" class="py-8 border-b border-gray-600">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Law 48: Assume Formlessness</h2>
+            <div class="law-analysis">
+                <h3>The Law</h3>
+                <blockquote>
+                  By taking a shape, by having a visible plan, you open yourself to attack. Instead of taking a form for your enemy to grasp, keep yourself adaptable and on the move. Accept the fact that nothing is certain and no law is fixed. The best way to protect yourself is to be as fluid and formless as water; never bet on stability or lasting order.
+                </blockquote>
+                <p>
+                    <strong>Our Hilarious Take:</strong> Be like water, my friend... or a particularly slippery eel. The less predictable you are, the harder you are to defeat.  Think of your life as an improv show where you're constantly changing characters and accents.
+                </p>
+                <p>
+                    <strong>When to Use:</strong> When playing poker, when negotiating with a difficult person, and when trying to explain your ever-changing life plans to your parents.
+                </p>
+                <p>
+                    <strong>When to Avoid:</strong> When filling out official government forms, when building a house, and when trying to convince someone you're a reliable and stable romantic partner.
+                </p>
+            </div>
+             <div class="gallery">
+                <img src="https://i.ibb.co/89vJ9PZ/WhatsApp-Image-2025-05-04-at-21-56-44-0d98fb7a.jpg" alt="48 Laws of Power Funny Image" data-full-img="https://i.ibb.co/89vJ9PZ/WhatsApp-Image-2025-05-04-at-21-56-44-0d98fb7a.jpg">
+            </div>
+            <div class="modal">
+                <span class="close-button">&times;</span>
+                <img src="" alt="Full Size Image">
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-700 py-6 text-center text-gray-300 border-t border-gray-600">
+        <p>&copy; 2025.  All rights reserved.  (But don't get any ideas.)</p>
+        <p>This website is for entertainment purposes only.  Please don't use these laws to take over the world... unless you invite Thomas Nkemanjong: 647-655-4689.</p>
+    </footer>
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const modal = document.querySelector('.modal');
+        const modalImg = document.querySelector('.modal img');
+        const closeButton = document.querySelector('.modal .close-button');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.getAttribute('data-full-img');
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalImg.src = '';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modalImg.src = '';
+            }
+        });
+    </script>
+</body>
+</html>
